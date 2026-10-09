@@ -61,9 +61,9 @@ flowchart LR
 │   ├── frontend/
 │   │   ├── index.html                 # Resume page
 │   │   └── main.css                   # Styles
+|   |   └── fetchAPI.js                # Calls the API and updates the counter
 │   └── backend/
 │       ├── incrementVisitorCount.py   # Lambda handler
-│       └── fetchAPI.js                # Calls the API and updates the counter
 └── README.md
 ```
 
