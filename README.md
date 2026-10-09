@@ -2,7 +2,7 @@
 
 My resume, hosted as a serverless website on AWS, with a live visitor counter.
 
-**Live site:** [mauricio-delhoyo.com](https://mauricio-delhoyo.com)
+**Live site:** [delhoyo.dev](https://delhoyo.dev)
 
 Built by **Mauricio del Hoyo**, Cloud Technical Consultant at Siemens DISW, Mexico City.
 
@@ -45,7 +45,7 @@ flowchart LR
 
 - **Private S3 bucket.** Block Public Access is on. A bucket policy restricts reads to this CloudFront distribution only, using a `StringEquals` condition on the distribution ARN.
 - **HTTPS everywhere** through CloudFront.
-- **CORS restricted** to `https://mauricio-delhoyo.com`, not `*`.
+- **CORS restricted** to `https://delhoyo.dev`, not `*`.
 - **Rate limiting** on API Gateway: 10 requests/second, burst of 20. There's intentionally no API key, because any key would be visible in the browser's JavaScript.
 - **Atomic counter updates.** DynamoDB `update_item` with `ADD` prevents race conditions between simultaneous visitors.
 - **Logging.** CloudWatch logs for Lambda and API Gateway. CloudFront access logs go to a dedicated S3 bucket.
@@ -107,6 +107,7 @@ Automating this is on the roadmap below.
 - **Turning off S3 website hosting requires a CloudFront default root object.** Without it, requests to `/` fail.
 - **API Gateway wraps the Lambda response.** The frontend has to `JSON.parse(data.body)` to read the count, otherwise it shows `undefined`.
 - **Template literals need backticks.** `` `${count}` `` works, but `'${count}'` prints the text literally.
+- **Turn on domain auto-renew.** My original domain expired and was taken by a domain squatter. Moving to `delhoyo.dev` meant a new ACM certificate, new CloudFront alternate domain names, a recreated Route 53 hosted zone and an updated CORS header. The new domain has auto-renew turned on.
 - **Throttling has more than one layer.** Under load testing, Lambda's concurrency burst limit was reached before API Gateway's rate limit, which caused 500 errors. This isn't a concern at real traffic levels, but it showed that each service enforces its own limits.
 
 ---
