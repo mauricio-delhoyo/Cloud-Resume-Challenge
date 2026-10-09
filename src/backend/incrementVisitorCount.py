@@ -28,7 +28,7 @@ def lambda_handler(event, context):
    return {
       'statusCode': 200,
     'headers': {
-        'Access-Control-Allow-Origin': 'https://mauricio-delhoyo.com'
+        'Access-Control-Allow-Origin': 'https://delhoyo.dev'
     },
     'body': json.dumps({
         'visitor_count': str(response['Attributes']['visitor_count']),
