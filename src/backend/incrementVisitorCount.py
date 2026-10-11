@@ -24,14 +24,14 @@ def increment_count():
    return response
 
 def lambda_handler(event, context):
-   response = increment_count()
-   return {
-      'statusCode': 200,
-    'headers': {
-        'Access-Control-Allow-Origin': 'https://delhoyo.dev'
-    },
-    'body': json.dumps({
-        'visitor_count': str(response['Attributes']['visitor_count']),
-        'last_visit': response['Attributes']['last_visit']
-    })
-   } 
+    response = increment_count()
+    # CORS is handled by API Gateway (Integration Response header mapping),
+    # not here: with a non-proxy integration, headers returned by Lambda
+    # are not sent to the browser.
+    return {
+        'statusCode': 200,
+        'body': json.dumps({
+            'visitor_count': str(response['Attributes']['visitor_count']),
+            'last_visit': response['Attributes']['last_visit']
+        })
+    }
