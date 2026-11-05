@@ -20,13 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - name: Ckeck out repository
+      - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Configur AWS credentials (OIDC)
-        uses: aws-actions/configur-aws-credentials@v4
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{secreTS.AWS_ROLE_ARN}}
+          role-to-assume: ${{secrets.AWS_ROLE_ARN}}
           aws-region: ${{vars.AWS_REGION}}
           
       - name: Sync site files to S3
