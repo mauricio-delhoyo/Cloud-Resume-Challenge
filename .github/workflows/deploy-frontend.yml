@@ -1,0 +1,42 @@
+name: Deploy frontend
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "src/frontend/**"
+      - ".gihub/workflows/deploy-frontend.yml"
+  workflow_dispatch: 
+
+permissions: 
+  id-token: write
+  contents: read
+
+concurrency:
+  group: deploy-frontend
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Ckeck out repository
+        uses: actions/checkout@v4
+
+      - name: Configur AWS credentials (OIDC)
+        uses: aws-actions/configur-aws-credentials@v4
+        with:
+          role-to-assume: ${{secreTS.AWS_ROLE_ARN}}
+          aws-region: ${{vars.AWS_REGION}}
+          
+      - name: Sync site files to S3
+        run: |
+          aws s3 sync src/frontend/ "s3://${{secrets.S3_BUCKET}}" \
+            --delete \
+            --exclude ".*"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"
