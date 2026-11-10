@@ -1,123 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume - Mauricio del Hoyo</title>
-  <link rel="stylesheet" type="text/css" href="main.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mauricio del Hoyo · Cloud Technical Consultant</title>
+  <meta name="description" content="Mauricio del Hoyo, Cloud Technical Consultant. Resume, GitHub, LinkedIn and the serverless AWS project behind this site.">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600&display=swap">
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <div class="page">
+  <main class="landing">
+    <section class="hero">
+      <p class="prompt">$ whoami</p>
+      <h1>Mauricio del Hoyo</h1>
+      <p class="hero__role">Cloud Technical Consultant</p>
 
-    <header class="header">
-      <h1>Mauricio del Hoyo de la Serna</h1>
-      <p class="title">Cloud Technical Consultant</p>
-    </header>
+      <nav class="links" aria-label="Links">
+        <a class="btn" href="https://github.com/mauricio-delhoyo" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          GitHub
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/mauricio-d-674073208/" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn--primary" href="resume.html">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+          Resume
+        </a>
+        <a class="btn" href="project.html">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 8l10 5 10-5z"/><path d="m2 16 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+          Featured project
+        </a>
+      </nav>
+    </section>
 
-    <main>
-      <section class="section">
-        <h2>Summary</h2>
-        <p>AWS Certified Cloud Technical Consultant with 4+ years of experience spanning cloud infrastructure management and enterprise software implementation. Specialized in AWS and Azure environments, infrastructure-as-code automation, and identity/access management for SaaS platforms.</p>
-      </section>
-
-      <section class="section">
-        <h2>Work Experience</h2>
-
-        <article class="entry">
-          <div class="entry-header">
-            <div>
-              <h3>Cloud Technical Consultant</h3>
-              <p class="entry-org">Siemens Digital Industries Software</p>
-            </div>
-            <p class="entry-date">December 2024 &ndash; Present</p>
-          </div>
-          <ul>
-            <li>Managed cloud infrastructure across AWS and Azure for 200+ EC2 instances and associated resources (RDS Aurora, Lambda, EventBridge, etc.) supporting Siemens' Teamcenter X and Polarion X SaaS solutions.</li>
-            <li>Redesigned CloudFormation templates for test client provisioning, cutting deployment time from 4 hours to 15 minutes (a 94% reduction) while eliminating manual configuration errors.</li>
-            <li>Automated infrastructure operations end-to-end using AWS CloudFormation, Ansible Tower, and GitLab CI/CD pipelines.</li>
-            <li>Executed cloud environment provisioning and access security management, administering Active Directory and CyberArk for privileged access control.</li>
-            <li>Collaborated with internal and external teams globally to support unified service delivery.</li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry-header">
-            <div>
-              <h3>Software Implementation Consultant</h3>
-              <p class="entry-org">Siemens Digital Industries Software</p>
-            </div>
-            <p class="entry-date">March 2022 &ndash; November 2024</p>
-          </div>
-          <ul>
-            <li>Delivered Opcenter Execution Core (MES) implementations for 2 global enterprise customers on long-term engagements, customizing work pages and business logic to improve factory-level tracking and manufacturing execution.</li>
-            <li>Introduced a parallel-delivery workflow for Opcenter MOM Connect configuration files, training fellow consultants to work concurrently on the same solution &mdash; cutting delivery timelines by 50%.</li>
-            <li>Engineered and managed integrations between customer ERP systems and Opcenter Execution Core.</li>
-          </ul>
-        </article>
-      </section>
-
-      <section class="section">
-        <h2>Education</h2>
-
-        <article class="entry">
-          <div class="entry-header">
-            <div>
-              <h3>Postgraduate Degree, Engineering and Project Management</h3>
-              <p class="entry-org">Universidad Panamericana</p>
-            </div>
-            <p class="entry-date">June 2022</p>
-          </div>
-        </article>
-
-        <article class="entry">
-          <div class="entry-header">
-            <div>
-              <h3>Bachelor's Degree, Mechatronics Engineering</h3>
-              <p class="entry-org">Universidad Panamericana</p>
-            </div>
-            <p class="entry-date">June 2021</p>
-          </div>
-          <ul>
-            <li>Baja SAE (2018&ndash;2021): Vehicle design lead and suspension designer.</li>
-            <li>Research assistant on a topology optimization project for ATV suspension design.</li>
-            <li>1st Place, StartCamp &mdash; a collegiate startup-simulation competition.</li>
-          </ul>
-        </article>
-      </section>
-
-      <section class="section">
-        <h2>Certifications &amp; Skills</h2>
-
-        <div class="skills-grid">
-          <div class="skill-group">
-            <h3>Certifications</h3>
-            <p>AWS Certified Solutions Architect; Python (Beginner&ndash;Intermediate)</p>
-          </div>
-          <div class="skill-group">
-            <h3>Cloud &amp; DevOps</h3>
-            <p>AWS (EC2, RDS Aurora, Lambda, etc.), Azure, CloudFormation, Ansible Tower, GitLab CI/CD</p>
-          </div>
-          <div class="skill-group">
-            <h3>Security &amp; Identity</h3>
-            <p>Active Directory, CyberArk</p>
-          </div>
-          <div class="skill-group">
-            <h3>Programming &amp; Data</h3>
-            <p>Python, C#, SQL, API configuration, data analysis</p>
-          </div>
-          <div class="skill-group">
-            <h3>Other</h3>
-            <p>Bilingual (English/Spanish), project management, cross-functional coordination</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <p id="visitor-count">Visitor count: &hellip;</p>
+    <footer class="counter">
+      <span class="counter__dot" aria-hidden="true"></span>
+      <span>Visitors: <span id="visitor-count">…</span></span>
     </footer>
-
-  </div>
+  </main>
 
   <script src="fetchAPI.js"></script>
 </body>

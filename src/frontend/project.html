@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Resume Challenge · Mauricio del Hoyo</title>
+  <meta name="description" content="How this site works: a serverless AWS website with a live visitor counter, deployed automatically with GitHub Actions.">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600&display=swap">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="page">
+    <div class="page__inner page__inner--wide">
+      <nav class="topbar" aria-label="Page">
+        <a class="back" href="/">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+          cd ~
+        </a>
+      </nav>
+
+      <header class="page-header">
+        <p class="prompt">$ cat featured-project</p>
+        <h1>Cloud Resume Challenge</h1>
+        <p class="page-header__sub">This website is the project. It's a serverless site on AWS with a live visitor counter, and every change I push to GitHub is deployed automatically.</p>
+      </header>
+
+      <main>
+        <section class="section" aria-labelledby="how">
+          <h2 class="section-title" id="how">How it works</h2>
+
+          <div class="flows">
+            <div>
+              <p class="flow__label">Serving the page</p>
+              <ol class="flow__steps">
+                <li><span class="node node--start"><span class="node__name">Browser</span><span class="node__desc">visitor</span></span></li>
+                <li><span class="node"><span class="node__name">Route 53</span><span class="node__desc">DNS</span></span></li>
+                <li><span class="node"><span class="node__name">CloudFront</span><span class="node__desc">CDN + HTTPS</span></span></li>
+                <li><span class="node"><span class="node__name">S3</span><span class="node__desc">private bucket</span></span></li>
+              </ol>
+            </div>
+
+            <div>
+              <p class="flow__label">Counting visitors</p>
+              <ol class="flow__steps">
+                <li><span class="node node--start"><span class="node__name">Page JavaScript</span><span class="node__desc">fetch on load</span></span></li>
+                <li><span class="node"><span class="node__name">API Gateway</span><span class="node__desc">throttled REST API</span></span></li>
+                <li><span class="node"><span class="node__name">Lambda</span><span class="node__desc">Python</span></span></li>
+                <li><span class="node"><span class="node__name">DynamoDB</span><span class="node__desc">atomic counter</span></span></li>
+              </ol>
+            </div>
+
+            <div>
+              <p class="flow__label">Deploying changes</p>
+              <ol class="flow__steps">
+                <li><span class="node node--start"><span class="node__name">git push</span><span class="node__desc">to main</span></span></li>
+                <li><span class="node"><span class="node__name">GitHub Actions</span><span class="node__desc">OIDC, no stored keys</span></span></li>
+                <li><span class="node"><span class="node__name">S3 sync</span><span class="node__desc">upload changes</span></span></li>
+                <li><span class="node"><span class="node__name">CloudFront</span><span class="node__desc">cache invalidation</span></span></li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--narrow" aria-labelledby="highlights">
+          <h2 class="section-title" id="highlights">Highlights</h2>
+          <ul class="list">
+            <li><strong>Private by default.</strong> The S3 bucket blocks public access; only this CloudFront distribution can read it.</li>
+            <li><strong>Locked-down API.</strong> CORS allows only this domain, and API Gateway rate-limits requests.</li>
+            <li><strong>Accurate counting.</strong> DynamoDB updates the count atomically, so simultaneous visitors are never lost.</li>
+            <li><strong>Keyless CI/CD.</strong> GitHub Actions gets short-lived AWS credentials through OIDC, limited to this repository.</li>
+            <li><strong>Cost guardrail.</strong> An AWS Budget alert fires if spending passes $10 a month.</li>
+          </ul>
+        </section>
+
+        <section class="callout" aria-labelledby="more">
+          <h2 id="more">Want the details?</h2>
+          <p>The GitHub repository has the full write-up: architecture, security decisions, the deployment pipeline, and the lessons I learned along the way.</p>
+          <a class="btn btn--primary" href="https://github.com/mauricio-delhoyo/Cloud-Resume-Challenge" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            View the repository on GitHub
+          </a>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume · Mauricio del Hoyo</title>
+  <meta name="description" content="Resume of Mauricio del Hoyo, Cloud Technical Consultant: AWS and Azure infrastructure, infrastructure as code and CI/CD.">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600&display=swap">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="page">
+    <div class="page__inner">
+      <nav class="topbar no-print" aria-label="Page">
+        <a class="back" href="/">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+          cd ~
+        </a>
+        <button class="btn btn--small" type="button" onclick="window.print()">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg>
+          Print / Save as PDF
+        </button>
+      </nav>
+
+      <header class="page-header">
+        <p class="prompt">$ cat resume</p>
+        <h1>Mauricio del Hoyo</h1>
+        <p class="page-header__sub">Cloud Technical Consultant</p>
+      </header>
+
+      <main>
+        <section class="section" aria-labelledby="summary">
+          <h2 class="section-title" id="summary">Summary</h2>
+          <p class="text">AWS Certified Cloud Technical Consultant with 4+ years of experience spanning cloud infrastructure management and enterprise software implementation. Specialized in AWS and Azure environments, infrastructure-as-code automation, and identity/access management for SaaS platforms.</p>
+        </section>
+
+        <section class="section" aria-labelledby="experience">
+          <h2 class="section-title" id="experience">Experience</h2>
+
+          <article class="entry">
+            <div class="entry__head">
+              <h3>Cloud Technical Consultant</h3>
+              <span class="entry__date">Dec 2024 – Present</span>
+            </div>
+            <p class="entry__org">Siemens Digital Industries Software</p>
+            <ul class="list">
+              <li>Managed cloud infrastructure across AWS and Azure for 200+ EC2 instances and associated resources (RDS Aurora, Lambda, EventBridge, etc.) supporting Siemens' Teamcenter X and Polarion X SaaS solutions.</li>
+              <li>Redesigned CloudFormation templates for test client provisioning, cutting deployment time from 4 hours to 15 minutes (a 94% reduction) while eliminating manual configuration errors.</li>
+              <li>Automated infrastructure operations end-to-end using AWS CloudFormation, Ansible Tower, and GitLab CI/CD pipelines.</li>
+              <li>Executed cloud environment provisioning and access security management, administering Active Directory and CyberArk for privileged access control.</li>
+              <li>Collaborated with internal and external teams globally to support unified service delivery.</li>
+            </ul>
+          </article>
+
+          <article class="entry">
+            <div class="entry__head">
+              <h3>Software Implementation Consultant</h3>
+              <span class="entry__date">Mar 2022 – Nov 2024</span>
+            </div>
+            <p class="entry__org">Siemens Digital Industries Software</p>
+            <ul class="list">
+              <li>Delivered Opcenter Execution Core (MES) implementations for 2 global enterprise customers on long-term engagements, customizing work pages and business logic to improve factory-level tracking and manufacturing execution.</li>
+              <li>Introduced a parallel-delivery workflow for Opcenter MOM Connect configuration files, training fellow consultants to work concurrently on the same solution — cutting delivery timelines by 50%.</li>
+              <li>Engineered and managed integrations between customer ERP systems and Opcenter Execution Core.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="section" aria-labelledby="education">
+          <h2 class="section-title" id="education">Education</h2>
+
+          <article class="entry entry--compact">
+            <div class="entry__head">
+              <h3>Postgraduate Degree, Engineering and Project Management</h3>
+              <span class="entry__date">Jun 2022</span>
+            </div>
+            <p class="entry__org">Universidad Panamericana</p>
+          </article>
+
+          <article class="entry entry--compact">
+            <div class="entry__head">
+              <h3>Bachelor's Degree, Mechatronics Engineering</h3>
+              <span class="entry__date">Jun 2021</span>
+            </div>
+            <p class="entry__org">Universidad Panamericana</p>
+            <ul class="list">
+              <li>Baja SAE (2018–2021): Vehicle design lead and suspension designer.</li>
+              <li>1st Place, StartCamp — a collegiate startup-simulation competition.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="section" aria-labelledby="skills">
+          <h2 class="section-title" id="skills">Certifications &amp; Skills</h2>
+          <dl class="skills">
+            <div>
+              <dt>Certifications</dt>
+              <dd>AWS Certified Solutions Architect – Associate; AWS Certified AI Practitioner; AWS Certified Cloud Practitioner; Python (Beginner–Intermediate)</dd>
+            </div>
+            <div>
+              <dt>Cloud &amp; DevOps</dt>
+              <dd>AWS (EC2, RDS Aurora, Lambda, etc.), Azure, CloudFormation, Ansible Tower, GitLab CI/CD</dd>
+            </div>
+            <div>
+              <dt>Security &amp; Identity</dt>
+              <dd>Active Directory, CyberArk</dd>
+            </div>
+            <div>
+              <dt>Programming &amp; Data</dt>
+              <dd>Python, C#, SQL, API configuration, data analysis</dd>
+            </div>
+            <div>
+              <dt>Other</dt>
+              <dd>Bilingual (English/Spanish), project management, cross-functional coordination</dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
